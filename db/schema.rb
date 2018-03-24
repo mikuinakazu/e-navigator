@@ -16,11 +16,8 @@ ActiveRecord::Schema.define(version: 20180313103829) do
   enable_extension "plpgsql"
 
   create_table "profiles", force: :cascade do |t|
-    t.string "email"
     t.string "name"
-    t.integer "birth_year"
-    t.string "birth_month"
-    t.integer "birth_day"
+    t.date "birth_date"
     t.string "sex"
     t.string "school"
     t.integer "user_id"
