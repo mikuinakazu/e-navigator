@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_profile, only: [:edit, :update]
 
   def index
   end
@@ -21,9 +20,11 @@ class ProfilesController < ApplicationController
   end
 
   def edit
+    @profile = Profile.last
   end
 
   def update
+    @profile = Profile.find(params[:id])
     if @profile.update(profile_params)
       redirect_to edit_profile_path(current_user.id), notice: 'プロフィール更新が完了しました'
     else
@@ -35,10 +36,6 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).permit(:name, :birth_date, :sex, :school).merge(user_id: current_user.id)
-  end
-
-  def set_profile
-    @profile = Profile.find(params[:id])
   end
 
 end
