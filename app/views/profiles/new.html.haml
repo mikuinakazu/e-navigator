@@ -10,7 +10,7 @@
       %p 年齢
       =f.date_select :birth_date, require: true, use_month_numbers: true
       %p 性別
-      =f.select :sex, [['男性', 'male'], ['女性', 'female']], require: true
+      =f.select :sex, Profile.sexes.keys.to_a
       %p 学校名
       =f.text_field :school, require: true
       =f.submit '登録する'
