@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20180313103829) do
   create_table "profiles", force: :cascade do |t|
     t.string "name"
     t.date "birth_date"
-    t.string "sex"
+    t.integer "sex", limit: 2, default: 0, null: false
     t.string "school"
     t.integer "user_id"
     t.datetime "created_at", null: false
