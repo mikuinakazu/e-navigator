@@ -1,0 +1,17 @@
+= render 'layouts/header'
+.wrapper
+  %h1 プロフィールの更新
+  .profile_form
+    =form_for @profile do |f|
+      %p メールアドレス
+      = @user_email
+      %p 名前
+      =f.text_field :name, require: true
+      %p 年齢
+      =f.date_select :birth_date, {}, require: true
+      %p 性別
+      =f.select :sex, Profile.sexes.keys.to_a
+      %p 学校名
+      =f.text_field :school, require: true
+      =f.submit '更新する'
+
