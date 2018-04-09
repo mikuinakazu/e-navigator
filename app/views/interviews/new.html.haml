@@ -1,0 +1,9 @@
+= render 'layouts/header'
+.interview_wrapper
+  %h1 新規面接作成
+  .interview_fiels
+    %strong 開始時間
+    %br
+    =form_for @interview do |f|
+      =f.datetime_select :interview_date, require: true, use_month_numbers: true, class: 'hoge'
+      =f.submit '登録', class: "btn"
