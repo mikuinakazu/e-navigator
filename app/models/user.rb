@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile, dependent: :destroy
-  belongs_to :interview
+  has_many :interviews
 end
