@@ -6,4 +6,5 @@
     %br
     =form_for @interview do |f|
       =f.datetime_select :interview_date, {require: true, use_month_numbers: true}, class: 'interview_date'
-      =f.submit '登録', class: "btn"
+      .blobk
+        =f.submit '登録', class: "btn"
