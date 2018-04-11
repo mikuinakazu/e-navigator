@@ -4,5 +4,6 @@
   %p.strong 開始時間：
   %p.strong.inline-block 承認状態：
   %p.inline-block 保留
-  =link_to interviews_path do
-    %input{class: "btn", value: "面接一覧へ"}
+  .block
+    =link_to '面接一覧へ', interviews_path, class: 'btn'
+
