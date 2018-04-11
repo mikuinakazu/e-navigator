@@ -2,7 +2,7 @@ class InterviewsController < ApplicationController
 
   def index
     @user = User.find(current_user.id)
-    @interviews = Interview.all
+    @interviews = @user.interviews
   end
 
   def new
@@ -15,6 +15,6 @@ class InterviewsController < ApplicationController
 
   private
     def interview_params
-      params.require(:interview).permit(:interview_date, :status)
+      params.require(:interview).permit(:interview_date, :status).merge(user_id: current_user.id)
     end
 end
