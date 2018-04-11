@@ -1,10 +1,8 @@
 = render 'layouts/header'
 .interview_wrapper
   .alert.alert_info 面接が作成されました
-  %p
-    %strong 開始時間：
-  %p
-    %strong 承認状態：
-    保留
+  %p.strong 開始時間：
+  %p.strong.inline-block 承認状態：
+  %p.inline-block 保留
   =link_to interviews_path do
     %input{class: "btn", value: "面接一覧へ"}
