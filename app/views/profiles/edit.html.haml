@@ -1,10 +1,10 @@
 = render 'layouts/header'
 .wrapper
-  %h1 プロフィールの更新
+  %h1 プロフィールの作成・更新
   .profile_form
     =form_for @profile do |f|
       %p メールアドレス
-      = @user_email
+      = @profile.user.email
       %p 名前
       =f.text_field :name, require: true
       %p 年齢
