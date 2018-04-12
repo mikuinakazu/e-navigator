@@ -20,7 +20,12 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.last
+    @profile = Profile.where(user_id: current_user.id).last
+    if @profile != nil
+      return @profile
+    else
+      redirect_to new_profile_path
+    end
   end
 
   def update
