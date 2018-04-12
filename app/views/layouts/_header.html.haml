@@ -2,7 +2,7 @@
   %ul.menu-list
     =link_to root_path do
       %li.menu e-Navigator
-    = link_to new_profile_path do
+    = link_to edit_profile_path(id: current_user.id) do
       %li.menu プロフィール
     = link_to interviews_path do
       %li.menu 自分の面接一覧
