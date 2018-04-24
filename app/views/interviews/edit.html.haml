@@ -1,0 +1,10 @@
+= render 'layouts/header'
+.interview_wrapper
+  %h1 面接日程の変更
+  .interview_field
+    %strong 開始時間
+    %br
+    =form_for @interview do |f|
+      =f.datetime_select :interview_date, {require: true, use_month_numbers: true}, class: 'interview_date'
+      .block
+        =f.submit '変更', class: "btn"
