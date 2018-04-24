@@ -17,9 +17,14 @@ class InterviewsController < ApplicationController
   end
 
   def edit
+    @interview = Interview.find(params[:id])
   end
 
   def update
+    interview = Interview.find(params[:id])
+    if interview.user_id == current_user.id
+      interview.update(interview_params)
+    end
   end
 
   def destroy
