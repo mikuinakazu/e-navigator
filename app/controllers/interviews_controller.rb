@@ -16,6 +16,17 @@ class InterviewsController < ApplicationController
     @interview = Interview.create(interview_params)
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    interview = Interview.find(params[:id])
+    interview.destroy
+  end
+
   private
     def interview_params
       params.require(:interview).permit(:interview_date, :status).merge(user_id: current_user.id)
