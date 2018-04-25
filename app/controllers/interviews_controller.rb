@@ -29,7 +29,9 @@ class InterviewsController < ApplicationController
 
   def destroy
     interview = Interview.find(params[:id])
-    interview.destroy
+    if interview.user_id == current_user.id
+      interview.destroy
+    end
   end
 
   private
