@@ -24,6 +24,8 @@ class InterviewsController < ApplicationController
     interview = Interview.find(params[:id])
     if interview.user_id == current_user.id
       interview.update(interview_params)
+    else
+      redirect_to interviews_path, alert: '変更できるのは、ご自身で登録した面接のみです。'
     end
   end
 
@@ -31,6 +33,8 @@ class InterviewsController < ApplicationController
     interview = Interview.find(params[:id])
     if interview.user_id == current_user.id
       interview.destroy
+    else
+      redirect_to interviews_path, alert: '削除できるのは、ご自身で登録した面接のみです。'
     end
   end
 
