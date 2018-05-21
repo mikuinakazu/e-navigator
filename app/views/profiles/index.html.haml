@@ -25,7 +25,7 @@
         %td
           = user.profile.school
         %td
-          = user.interviews.last.interview_date
+          = user.interviews.last.interview_date if user.interviews.exists?
         %td
           =link_to '面接一覧'
 
