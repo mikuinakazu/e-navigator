@@ -16,6 +16,28 @@ class InterviewsController < ApplicationController
     @interview = Interview.create(interview_params)
   end
 
+  def edit
+    @interview = Interview.find(params[:id])
+  end
+
+  def update
+    interview = Interview.find(params[:id])
+    if interview.user_id == current_user.id
+      interview.update(interview_params)
+    else
+      redirect_to interviews_path, alert: '変更できるのは、ご自身で登録した面接のみです。'
+    end
+  end
+
+  def destroy
+    interview = Interview.find(params[:id])
+    if interview.user_id == current_user.id
+      interview.destroy
+    else
+      redirect_to interviews_path, alert: '削除できるのは、ご自身で登録した面接のみです。'
+    end
+  end
+
   private
     def interview_params
       params.require(:interview).permit(:interview_date, :status).merge(user_id: current_user.id)

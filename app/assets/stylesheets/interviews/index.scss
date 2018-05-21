@@ -37,3 +37,50 @@ td{
   // display: block;
 }
 
+// new
+.interview_date {
+  display: inline-block;
+  max-width: 100%;
+  height: calc(2.25rem + 2px);
+  line-height: 1.5;
+  color: #495057;
+  vertical-align: middle;
+  background-size: 8px 10px;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+}
+
+
+// create
+.alert_info{
+  color: #0c5460;
+  background-color: #d1ecf1;
+  border-color: #d1ecf1;
+}
+
+.alert{
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+
+.strong{
+  font-weight: bold;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.block{
+  margin-top:20px;
+}
+
+
+// delete
+.delete_message{
+  margin: 20px 0;
+}
+
