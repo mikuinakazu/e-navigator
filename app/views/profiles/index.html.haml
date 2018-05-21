@@ -19,11 +19,11 @@
         %td
           = user.email
         %td
-          = user.profile.birth_date if user.profile.exists?
+          = user.profile.birth_date if user.profile.present?
         %td
-          = user.profile.sex if user.profile.exists?
+          = user.profile.sex if user.profile.present?
         %td
-          = user.profile.school if user.profile.exists?
+          = user.profile.school if user.profile.present?
         %td
           = user.interviews.last.interview_date if user.interviews.exists?
         %td
