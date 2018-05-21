@@ -13,7 +13,7 @@
         %th
     %tbody
     - @users.each do |user|
-      - if @users.profile.exists?
+      - if user.profile.exists?
         %tr
           %td
             = user.profile.name
