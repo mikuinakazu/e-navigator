@@ -13,20 +13,19 @@
         %th
     %tbody
     - @users.each do |user|
-      - if user.profile.exists?
-        %tr
-          %td
-            = user.profile.name
-          %td
-            = user.email
-          %td
-            = user.profile.birth_date
-          %td
-            = user.profile.sex
-          %td
-            = user.profile.school
-          %td
-            = user.interviews.last.interview_date if user.interviews.exists?
-          %td
-            =link_to '面接一覧'
+      %tr
+        %td
+          = user.profile.name if user.profile.exists?
+        %td
+          = user.email
+        %td
+          = user.profile.birth_date if user.profile.exists?
+        %td
+          = user.profile.sex if user.profile.exists?
+        %td
+          = user.profile.school if user.profile.exists?
+        %td
+          = user.interviews.last.interview_date if user.interviews.exists?
+        %td
+          =link_to '面接一覧'
 
