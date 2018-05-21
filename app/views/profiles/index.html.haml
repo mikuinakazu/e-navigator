@@ -11,22 +11,22 @@
         %th 学校名
         %th 面接日時
         %th
-  - if @users.profile.exists?
     %tbody
     - @users.each do |user|
-      %tr
-        %td
-          = user.profile.name
-        %td
-          = user.email
-        %td
-          = user.profile.birth_date
-        %td
-          = user.profile.sex
-        %td
-          = user.profile.school
-        %td
-          = user.interviews.last.interview_date if user.interviews.exists?
-        %td
-          =link_to '面接一覧'
+      - if @users.profile.exists?
+        %tr
+          %td
+            = user.profile.name
+          %td
+            = user.email
+          %td
+            = user.profile.birth_date
+          %td
+            = user.profile.sex
+          %td
+            = user.profile.school
+          %td
+            = user.interviews.last.interview_date if user.interviews.exists?
+          %td
+            =link_to '面接一覧'
 
