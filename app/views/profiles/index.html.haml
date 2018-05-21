@@ -15,7 +15,7 @@
     - @users.each do |user|
       %tr
         %td
-          = user.profile.name if user.profile.exists?
+          = user.profile.name if user.profile.present?
         %td
           = user.email
         %td
