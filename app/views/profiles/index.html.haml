@@ -11,6 +11,7 @@
         %th 学校名
         %th 面接日時
         %th
+  - if @users.profile.exists?
     %tbody
     - @users.each do |user|
       %tr
