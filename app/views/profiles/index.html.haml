@@ -1,1 +1,31 @@
 = render 'layouts/header'
+.interview_wrapper
+  %h1 ユーザー一覧
+  %table.table
+    %thead
+      %tr
+        %th 名前
+        %th Email
+        %th 年齢
+        %th 性別
+        %th 学校名
+        %th 面接日時
+        %th
+    %tbody
+    - @users.each do |user|
+      %tr
+        %td
+          = user.profile.name if user.profile.present?
+        %td
+          = user.email
+        %td
+          = user.profile.birth_date if user.profile.present?
+        %td
+          = user.profile.sex if user.profile.present?
+        %td
+          = user.profile.school if user.profile.present?
+        %td
+          = user.interviews.last.interview_date if user.interviews.exists?
+        %td
+          =link_to '面接一覧'
+
