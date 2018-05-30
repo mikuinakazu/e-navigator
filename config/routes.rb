@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'profiles#index'
+  devise_for :users
+  resources :users do
+    resources :interviews, except: [:show]
+  end
+  # resources :interviews, except: [:show]
   resources :profiles, only: [:new, :create, :edit, :update]
-  resources :interviews, except: [:show]
 end

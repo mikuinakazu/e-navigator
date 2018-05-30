@@ -4,7 +4,7 @@
       %li.menu e-Navigator
     = link_to edit_profile_path(id: current_user.id) do
       %li.menu プロフィール
-    = link_to interviews_path do
+    = link_to user_interviews_path(user_id: current_user.id) do
       %li.menu 自分の面接一覧
     %li.menu メール
     = link_to destroy_user_session_path, method: :delete do

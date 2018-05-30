@@ -17,6 +17,7 @@ class InterviewsController < ApplicationController
   end
 
   def edit
+    @user = User.find(current_user.id)
     @interview = Interview.find(params[:id])
   end
 
