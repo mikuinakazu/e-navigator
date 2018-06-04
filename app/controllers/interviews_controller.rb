@@ -7,7 +7,7 @@ class InterviewsController < ApplicationController
     end
     @interviews = @user.interviews
 
-    # 部分テンプレート用
+    # 日程は翌日以降、かつ時間をランダムに取得するアルゴリズム
     @today = DateTime.now.strftime("%Y年 %m月 %d日, ")
     @time = DateTime.now.strftime("%H : %M")
 
