@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+ Rails.application.routes.draw do
   root 'profiles#index'
   devise_for :users
   resources :users do
