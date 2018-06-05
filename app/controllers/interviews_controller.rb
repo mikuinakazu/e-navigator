@@ -6,24 +6,6 @@ class InterviewsController < ApplicationController
       redirect_to new_profile_path, alert: '面接を登録するにはプロフィールの登録が必要です'
     end
     @interviews = @user.interviews
-
-    # 日程は翌日以降、かつ時間をランダムに取得するアルゴリズム
-    @today = DateTime.now.strftime("%Y年 %m月 %d日, ")
-    @time = DateTime.now.strftime("%H : %M")
-
-    def rand_date
-      days = DateTime.tomorrow + 10 - DateTime.tomorrow + 1
-      return DateTime.tomorrow + rand(days)
-    end
-    @random_days = rand_date.strftime("%Y年 %m月 %d日, ")
-
-    def rand_time
-      hour = rand(10..20).to_s
-      minute = rand(00..59).to_s
-      return hour + " : " + minute
-    end
-    @random_time = rand_time
-
   end
 
   def new
