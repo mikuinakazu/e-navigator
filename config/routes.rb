@@ -4,6 +4,5 @@
   resources :users do
     resources :interviews, except: [:show]
   end
-  # resources :interviews, except: [:show]
   resources :profiles, only: [:new, :create, :edit, :update]
 end
