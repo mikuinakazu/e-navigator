@@ -1,4 +1,9 @@
 = render 'layouts/header'
 %p.delete_message 選択した面接日程の変更が完了しました。
--
-= link_to '面接一覧へ戻る', user_interviews_path(user_id: current_user.id), class: 'btn'
+- if params[:user_id].to_i == current_user.id
+  = link_to '面接一覧へ戻る', user_interviews_path(user_id: current_user.id), class: 'btn'
+- else
+  %p.strong 開始時間：
+  = @interview
+  %p.strong.inline-block 承認状態：承認
+  %p.inline-block 保留

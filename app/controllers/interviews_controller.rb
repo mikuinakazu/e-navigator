@@ -24,8 +24,8 @@ class InterviewsController < ApplicationController
 
   def update
     # binding.pry
-    interview = Interview.find(params[:id])
-    interview.update(interview_params)
+    @interview = Interview.find(params[:id])
+    @interview.update(interview_params)
   end
 
   def destroy
