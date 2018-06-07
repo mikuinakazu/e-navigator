@@ -9,7 +9,8 @@
 %hr
 %h2 面接日程を変更する場合は以下から選んでください。
 - @interviews.each do |interview|
-  .btn
-    = interview.interview_date.strftime("%Y年%m月%d日 %H時%M分")
+  = link_to user_interview_path(user_id: @user.id, id: interview.id), method: :patch do
+    .btn
+      = interview.interview_date.strftime("%Y年%m月%d日 %H時%M分")
 
 

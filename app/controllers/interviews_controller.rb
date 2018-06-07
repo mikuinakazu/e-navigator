@@ -23,12 +23,9 @@ class InterviewsController < ApplicationController
   end
 
   def update
+    # binding.pry
     interview = Interview.find(params[:id])
-    if interview.user_id == current_user.id
-      interview.update(interview_params)
-    else
-      redirect_to interviews_path, alert: '変更できるのは、ご自身で登録した面接のみです。'
-    end
+    interview.update(interview_params)
   end
 
   def destroy
@@ -42,6 +39,6 @@ class InterviewsController < ApplicationController
 
   private
     def interview_params
-      params.require(:interview).permit(:interview_date, :status).merge(user_id: current_user.id)
+      params.require(:interview).permit(:interview_date, :user_id)
     end
 end
