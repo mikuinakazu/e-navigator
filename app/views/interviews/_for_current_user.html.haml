@@ -9,7 +9,7 @@
   - @interviews.each do |interview|
     %tr
       %td
-        = interview.interview_date.interview_date_str
+        = interview.interview_date_str
       %td 保留
       %td
         =link_to '編集', edit_user_interview_path(user_id: current_user.id, id: interview.id)
