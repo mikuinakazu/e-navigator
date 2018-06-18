@@ -2,16 +2,16 @@
 %h2 現在の面接日程
 - if @user.interviews.present?
   %b
-    #{@user.interviews.last.interview_date_str}
+    / #{@user.interviews.last.interview_date_str}
   に面接が設定されています。
 - else
   面接日程はまだ設定されていません。
 %hr
 %h2 面接日程を変更する場合は以下から選んでください。
 - @interviews.each do |interview|
-  =form_for [@user, interview] do |f|
-    =f.text_field :interview_date, class: 'btn'
-    =f.submit 'この日程に変更'
+  .btn(style="width: 250px;")
+    = interview.interview_date_str
+
 
 
 
