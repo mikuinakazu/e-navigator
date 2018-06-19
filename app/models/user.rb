@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :interviews
+  has_one :determined_date
 end
