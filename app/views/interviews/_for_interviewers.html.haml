@@ -9,7 +9,8 @@
 %hr
 %h2 面接日程を変更する場合は以下から選んでください。
 - @interviews.each do |interview|
-  .btn(style="width: 250px;")
+  / = link_to user_interview_path(user_id: @user.id, id: interview.id), method: :update, class: "btn"
+  %form.btn(style="width: 250px;" method="post")
     = interview.interview_date_str
 
 
