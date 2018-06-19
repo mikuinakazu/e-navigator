@@ -1,0 +1,2 @@
+class DeterminedDate < ApplicationRecord
+end
