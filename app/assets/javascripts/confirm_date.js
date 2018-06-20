@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function() {
   $('.js_btn').on('click', function() {
-    console.log('やっほー')
+    alert('◯◯ で面接を確定していいですか？')
   });
 });
 
